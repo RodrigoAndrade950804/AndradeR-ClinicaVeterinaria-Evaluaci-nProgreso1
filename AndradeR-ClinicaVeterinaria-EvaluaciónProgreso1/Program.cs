@@ -1,4 +1,8 @@
+﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
 var builder = WebApplication.CreateBuilder(args);
+builder.Services.AddDbContext<AndradeR_SQL>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("AndradeR_SQL") ?? throw new InvalidOperationException("Connection string 'AndradeR_SQL' not found.")));
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
