@@ -8,17 +8,27 @@ namespace AndradeR_ClinicaVeterinaria_EvaluaciónProgreso1.Models
         [Key]
         public int MascotaId { get; set; }
 
-        [Required(ErrorMessage = "El Nombre de la mascota es obligatorio.")]
-        [MaxLength(10, ErrorMessage = "El Nombre de la mascota no puede exceder los 10 caracteres.")]
+        [Required(ErrorMessage = "El nombre de la mascota es obligatorio.")]
+        [MaxLength(100, ErrorMessage = "El nombre no puede exceder los 100 caracteres.")]
         [DisplayName("Nombre de la mascota")]
-        public String NombreMascota { get; set; }
+        public string Nombre { get; set; }
 
-        [Range(0, 20, ErrorMessage = "La raza de la mascota no puede exceder los 20 caracteres.")]
-        [DisplayName("Nombre de la mascota")]
-        public String Raza { get; set; }
+        [Required(ErrorMessage = "La especie es obligatoria.")]
+        [MaxLength(50, ErrorMessage = "La especie no puede exceder los 50 caracteres.")]
+        [DisplayName("Especie")]
+        public string Especie { get; set; }
 
-        public bool Vacunada { get; set; }
+        [Required(ErrorMessage = "La edad es obligatoria.")]
+        [Range(0, 100, ErrorMessage = "La edad debe estar entre 0 y 100 años.")]
+        [DisplayName("Edad")]
+        public int Edad { get; set; }
 
-        public String TipoMedicación { get; set; }
+        [DisplayName("Peso (kg)")]
+        [Range(0.1, 200, ErrorMessage = "El peso debe ser un valor positivo.")]
+        public float Peso { get; set; }
+
+        [Required(ErrorMessage = "El dueño es obligatorio.")]
+        [DisplayName("Dueño")]
+        public int DueñoId { get; set; }
     }
 }
