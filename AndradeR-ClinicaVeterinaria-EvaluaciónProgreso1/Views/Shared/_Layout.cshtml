@@ -29,9 +29,9 @@
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="DueñoMascota" asp-action="Index">Dueños de las mascotas</a>
                         </li>
-						<li class="nav-item">
-							<a class="nav-link text-dark" asp-area="" asp-controller="Mascota" asp-action="Index">Lista de mascotas</a>
-						</li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Mascota" asp-action="Index">Lista de mascotas</a>
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -41,6 +41,11 @@
         <main role="main" class="pb-3">
             @RenderBody()
         </main>
+        <!-- Campo de texto y botón para mostrar el mensaje -->
+        <div class="text-center mt-4">
+            <input type="text" id="mensajeInput" class="form-control mb-3" placeholder="Escribe algo aquí..." />
+            <button id="mensajeButton" class="btn btn-primary">Mostrar Mensaje</button>
+        </div>
     </div>
 
     <footer class="border-top footer text-muted">
@@ -51,6 +56,15 @@
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
+    <script>
+        // Script para mostrar el mensaje al hacer clic en el botón
+        document.getElementById('mensajeButton').addEventListener('click', function () {
+            const inputValue = document.getElementById('mensajeInput').value;
+            alert(`Mi nombre es Rodrigo Andrade, mi curso es el 107, mi hobbie es nadar, y el valor del campo de texto es: ${inputValue}`);
+        });
+    </script>
     @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>
+
+
