@@ -1,0 +1,9 @@
+﻿.custom-size {
+    width: auto; /* Ajusta automáticamente el ancho */
+    height: 700px; /* Define una altura fija */
+    object-fit: cover; /* Ajusta la imagen para que se recorte si es necesario */
+}
+
+.carousel-inner {
+    max-height: 700px; /* Asegúrate de que el contenedor no exceda la altura de las imágenes */
+}

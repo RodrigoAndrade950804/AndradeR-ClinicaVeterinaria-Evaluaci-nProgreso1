@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace AndradeR_ClinicaVeterinaria_EvaluaciónProgreso1.Models
 {
@@ -30,5 +31,7 @@ namespace AndradeR_ClinicaVeterinaria_EvaluaciónProgreso1.Models
         [Required(ErrorMessage = "El dueño es obligatorio.")]
         [DisplayName("Dueño")]
         public int DueñoId { get; set; }
+        [ForeignKey("DueñoId")]
+        public DueñoMascota? DueñoMascota { get; set; }
     }
 }
